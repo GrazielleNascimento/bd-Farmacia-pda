@@ -256,3 +256,26 @@ INSERT INTO pessoa_contato_emergencial (id_pessoa, id_pessoa_contato) VALUES
 (32, 32),
 (33, 33)
 ;
+
+-- Inserir dados em profissional_especialidade
+INSERT INTO `profissional_especialidade` (`nome`) VALUES 
+('Cardiologia'), 
+('Enfermeiro'), 
+('Cirurgia'),
+('Neurologia'),
+('Oncologia'),
+('Ginecologia'),
+('Ortopedia'),
+('Dermatologia'),
+('Psiquiatria'),
+('Oftalmologia'),
+('Endocrinologia'),
+('Urologia'), 
+('Anestesiologia'),
+('Otorrinolaringologia'),
+('Radiologia'),
+('Nutrologia'),
+('Homeopatia'),
+('Oncopediatria'),
+('Dermatopatologia')
+;
