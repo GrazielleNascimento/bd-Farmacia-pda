@@ -328,3 +328,20 @@ INSERT INTO paciente_leito (id_paciente, numero_do_quarto, andar, disponibilidad
 (12, 112, 6, FALSE), 
 (13, 113, 7, FALSE)
 ;
+
+-- Inserir dados em acompanhante
+INSERT INTO acompanhante (id_pessoa, id_paciente, parentesco) VALUES 
+(7, 1, 'Esposo'), 
+(8, 2, 'Marido'), 
+(9, 3, 'Tia'),
+(10, 4, 'Mãe'),
+(11, 5, 'Pai'),
+(12, 6, 'Irmão'),
+(13, 7, 'Irmã'),
+(14, 8, 'Filho'),
+(15, 9, 'Filha'),
+(16, 10, 'Avô'),
+(17, 11, 'Avó'),
+(18, 12, 'Sobrinho'),
+(19, 13, 'Sobrinha')
+;
