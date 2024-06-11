@@ -56,3 +56,30 @@ CREATE TABLE pessoa_documentos (
   FOREIGN KEY (id_pessoa) REFERENCES pessoa(id),
   FOREIGN KEY (id_doc) REFERENCES documento(id)
 );
+
+CREATE TABLE pessoa_contato_emergencial (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_pessoa int,
+  id_pessoa_contato int,
+  FOREIGN KEY (id_pessoa) REFERENCES pessoa(id),
+  FOREIGN KEY (id_pessoa_contato) REFERENCES pessoa(id)
+);
+
+-- Tabelas de profissional e especialidade
+CREATE TABLE profissional_especialidade (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(100)
+);
+
+CREATE TABLE profissional (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_pessoa int,
+  categoria varchar(50),
+  id_profissional_especialidade int,
+  id_crm_doc int,
+  id_coren_doc int,
+  FOREIGN KEY (id_pessoa) REFERENCES pessoa(id),
+  FOREIGN KEY (id_profissional_especialidade) REFERENCES profissional_especialidade(id),
+  FOREIGN KEY (id_crm_doc) REFERENCES documento(id),
+  FOREIGN KEY (id_coren_doc) REFERENCES documento(id)
+);
