@@ -257,7 +257,6 @@ INSERT INTO pessoa_contato_emergencial (id_pessoa, id_pessoa_contato) VALUES
 (33, 33)
 ;
 
--- Inserir dados em profissional
 INSERT INTO profissional (id_pessoa, categoria, id_profissional_especialidade, id_crm_doc, id_coren_doc) VALUES 
 (1, 'Médico', 1, 7, NULL), 
 (2, 'Enfermeiro', 2, NULL, 8), 
@@ -271,4 +270,25 @@ INSERT INTO profissional (id_pessoa, categoria, id_profissional_especialidade, i
 (10, 'Biomédico', 7, NULL, NULL),
 (11, 'Radiologista', 5, NULL, NULL),
 (12, 'Fonoaudiólogo', 4, NULL, NULL)
+
+INSERT INTO `profissional_especialidade` (`nome`) VALUES 
+('Cardiologia'), 
+('Enfermeiro'), 
+('Cirurgia'),
+('Neurologia'),
+('Oncologia'),
+('Ginecologia'),
+('Ortopedia'),
+('Dermatologia'),
+('Psiquiatria'),
+('Oftalmologia'),
+('Endocrinologia'),
+('Urologia'), 
+('Anestesiologia'),
+('Otorrinolaringologia'),
+('Radiologia'),
+('Nutrologia'),
+('Homeopatia'),
+('Oncopediatria'),
+('Dermatopatologia')
 ;
