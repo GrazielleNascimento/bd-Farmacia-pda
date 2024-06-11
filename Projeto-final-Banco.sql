@@ -83,3 +83,22 @@ CREATE TABLE profissional (
   FOREIGN KEY (id_crm_doc) REFERENCES documento(id),
   FOREIGN KEY (id_coren_doc) REFERENCES documento(id)
 );
+
+ALTER TABLE `profissional_especialidade`
+  ADD COLUMN `id_profissional` int,
+  ADD COLUMN `id_rqe_doc` int,
+  ADD FOREIGN KEY (`id_profissional`) REFERENCES `profissional`(`id`),
+  ADD FOREIGN KEY (`id_rqe_doc`) REFERENCES `documento`(`id`);
+
+-- Tabelas de paciente e relacionados
+CREATE TABLE `paciente` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id_pessoa` int,
+  `id_profissional_responsável` int NOT NULL,
+  `diagnóstico` text(500),
+  `medicamentos_usados` varchar(200),
+  `horario_entrada` datetime,
+  `horario_saida` datetime,
+  FOREIGN KEY (`id_pessoa`) REFERENCES `pessoa`(`id`),
+  FOREIGN KEY (`id_profissional_responsável`) REFERENCES `profissional`(`id`)
+);
