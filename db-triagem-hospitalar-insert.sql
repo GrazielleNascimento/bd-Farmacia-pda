@@ -270,6 +270,7 @@ INSERT INTO profissional (id_pessoa, categoria, id_profissional_especialidade, i
 (10, 'Biomédico', 7, NULL, NULL),
 (11, 'Radiologista', 5, NULL, NULL),
 (12, 'Fonoaudiólogo', 4, NULL, NULL)
+;
 
 INSERT INTO `profissional_especialidade` (`nome`) VALUES 
 ('Cardiologia'), 
@@ -291,4 +292,20 @@ INSERT INTO `profissional_especialidade` (`nome`) VALUES
 ('Homeopatia'),
 ('Oncopediatria'),
 ('Dermatopatologia')
+;
+
+INSERT INTO paciente_leito (id_paciente, numero_do_quarto, andar, disponibilidade) VALUES 
+(1, 101, 1, FALSE), 
+(2, 102, 1, FALSE), 
+(3, 103, 2, FALSE),
+(4, 104, 2, FALSE), 
+(5, 105, 3, FALSE),
+(6, 106, 3, FALSE),
+(7, 107, 4, FALSE),
+(8, 108, 4, FALSE),
+(9, 109, 5, FALSE),
+(10, 110, 5, FALSE),
+(11, 111, 6, FALSE), 
+(12, 112, 6, FALSE), 
+(13, 113, 7, FALSE)
 ;
