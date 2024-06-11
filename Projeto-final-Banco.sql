@@ -35,3 +35,24 @@ CREATE TABLE `documento` (
   FOREIGN KEY (`id_uf`) REFERENCES `estado`(`id`)
 );
 
+-- Tabelas com dependências de pessoa
+CREATE TABLE pessoa_endereco (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_pessoa int,
+  logradouro varchar(100),
+  numero varchar(50),
+  bairro varchar(50),
+  cep int,
+  complemento varchar(100),
+  id_cidade int,
+  FOREIGN KEY (id_pessoa) REFERENCES pessoa(id),
+  FOREIGN KEY (id_cidade) REFERENCES cidade(id)
+);
+
+CREATE TABLE pessoa_documentos (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_pessoa int,
+  id_doc int,
+  FOREIGN KEY (id_pessoa) REFERENCES pessoa(id),
+  FOREIGN KEY (id_doc) REFERENCES documento(id)
+);
