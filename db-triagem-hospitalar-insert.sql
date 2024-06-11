@@ -102,3 +102,43 @@ INSERT INTO pessoa (nome, sobrenome, data_de_nascimento, genero, tel_contato, em
 ('Gabriel', 'Santos', '1992-03-25', 'M', '11987654321', 'gabriel.santos@example.com'), 
 ('Ana', 'Oliveira', '1988-07-12', 'F', '11765432109', 'ana.oliveira@example.com'), 
 ('Mariana', 'Silva', '1975-11-30', 'F', '11654321098', 'mariana.silva@example.com')
+;
+
+-- Inserir dados em documento
+INSERT INTO documento (nome, sigla, numero, id_uf, data_emissao) VALUES 
+('Certificado de Registro Médico', 'CRM', 123456, 1, '2020-01-01'), 
+('Certificado de Registro de Enfermagem', 'COREN', 654321, 2, '2019-05-10'), 
+('Registro Geral', 'RG', 96524, 4, '1999-04-19'),
+('Carteira Nacional de Habilitação', 'CNH', 982235, 3, '2010-08-20'),
+('Registro Geral', 'RG', 78514, 7, '1985-03-20'),
+('Cadastro Pessoa Física', 'CPF', 98724, 5, '1984-03-15'),
+('Certificado de Registro Médico', 'CRM', 1776, 1, '2020-01-01'), 
+('Cadastro Pessoa Física', 'CPF', 98254, 6, '1985-07-16'),
+('Cadastro Pessoa Física', 'CPF', 98264, 7, '1991-04-15'),
+('RQE', 'RQE', 5628, 6, '2023-05-02'),
+('RQE', 'RQE', 5623, 6, '2023-04-29'),
+('Registro Nacional de Estrangeiros', 'RNE', 1133, 3, '2018-06-15'), 
+('Carteira de Trabalho e Previdência Social', 'CTPS', 4456, 4, '2017-03-22'), 
+('Título de Eleitor', 'TE', 7799, 5, '2016-11-10'),
+('Carteira de Identidade', 'RG', 12367, 1, '2015-07-01'), 
+('CPF', 'CPF', 92100, 2, '2018-10-15'), 
+('Carteira de Trabalho', 'CTPS', 98765, 4, '2005-09-30'),
+('Carteira Nacional de Habilitação', 'CNH', 128900, 3, '2012-04-10'),
+('Registro Geral', 'RG', 7496, 7, '1990-01-20'),
+('Certidão de Nascimento', 'CN', 9843, 5, '2000-12-15'),
+('Certidão de Casamento', 'CC', 1762, 1, '2019-08-01'), 
+('Título de Eleitor', 'TE', 982525, 6, '2005-02-16'),
+('Passaporte', 'PASS', 98237, 7, '2011-11-25'),
+('Certificado de Reservista', 'CR', 562847, 6, '2020-03-12'),
+('Cartão Nacional de Saúde', 'CNS', 562325, 6, '2020-02-28'),
+('Carteira de Identidade Profissional', 'CIP', 11244, 3, '2019-04-15'), 
+('Cartão de Crédito', 'CC', 445677, 4, '2016-01-22'), 
+('Certificado de Registro Médico', 'CRM', 65410, 1, '2017-02-15'),
+('Certificado de Registro Médico', 'CRM', 98743, 2, '2016-09-20'),
+('Certificado de Registro Médico', 'CRM', 14723, 3, '2018-05-10'),
+('Certificado de Registro de Enfermagem', 'COREN', 98543, 4, '2015-11-30'),
+('Certificado de Registro de Enfermagem', 'COREN', 65210, 5, '2016-08-25'),
+('Certificado de Registro de Enfermagem', 'COREN', 12567, 6, '2019-04-05'),
+('Certificado de Registro de Enfermagem', 'COREN', 4567890, 2, '2021-03-15'),
+('Certificado de Registro Médico', 'CRM', 1237894, 1, '2018-12-20')
+;
