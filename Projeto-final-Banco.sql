@@ -102,3 +102,26 @@ CREATE TABLE `paciente` (
   FOREIGN KEY (`id_pessoa`) REFERENCES `pessoa`(`id`),
   FOREIGN KEY (`id_profissional_responsável`) REFERENCES `profissional`(`id`)
 );
+
+CREATE TABLE paciente_leito (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_paciente int,
+  numero_do_quarto int,
+  andar int,
+  disponibilidade bool,
+  FOREIGN KEY (id_paciente) REFERENCES paciente(id)
+);
+
+CREATE TABLE paciente_dados_vitais (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_paciente int,
+  id_responsavel_coleta int,
+  data_e_horario datetime,
+  temperatura float(50),
+  frequencia_cardiaca int(50),
+  frequencia_respiratoria int(50),
+  pressao_arterial varchar(50),
+  glicemia int(50),
+  FOREIGN KEY (id_paciente) REFERENCES paciente(id),
+  FOREIGN KEY (id_responsavel_coleta) REFERENCES profissional(id)
+);
