@@ -125,3 +125,34 @@ CREATE TABLE paciente_dados_vitais (
   FOREIGN KEY (id_paciente) REFERENCES paciente(id),
   FOREIGN KEY (id_responsavel_coleta) REFERENCES profissional(id)
 );
+
+CREATE TABLE acompanhante (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_pessoa int,
+  id_paciente int,
+  parentesco varchar(50),
+  FOREIGN KEY (id_pessoa) REFERENCES pessoa(id),
+  FOREIGN KEY (id_paciente) REFERENCES paciente(id)
+);
+
+CREATE TABLE medicamento (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(100),
+  dosagem varchar(50)
+);
+
+CREATE TABLE paciente_medicacao (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_paciente int NOT NULL,
+  id_medicamento int,
+  frequencia varchar(50),
+  data_inicio date,
+  data_fim date,
+  horario_administracao time,
+  id_responsavel_administracao int,
+  observacoes text,
+  data_registro datetime,
+  FOREIGN KEY (id_paciente) REFERENCES paciente(id),
+  FOREIGN KEY (id_medicamento) REFERENCES medicamento(id),
+  FOREIGN KEY (id_responsavel_administracao) REFERENCES profissional(id)
+);
