@@ -345,3 +345,59 @@ INSERT INTO acompanhante (id_pessoa, id_paciente, parentesco) VALUES
 (18, 12, 'Sobrinho'),
 (19, 13, 'Sobrinha')
 ;
+
+
+[19:46, 11/06/2024] +55 69 9338-5400: -- Inserir dados em pessoa_endereco
+INSERT INTO pessoa_endereco (id_pessoa, logradouro, numero, bairro, cep, complemento, id_cidade) VALUES 
+(1, 'Rua do Limoeiro', '123', 'Centro', 12345678, 'Apto 101', 1), 
+(2, 'Rua do Abacaxi', '456', 'Jardim Floresta', 87654321, 'Casa 02', 2), 
+(3, 'Rua da Feira', '789', 'Presidencial', 13579246, 'Sala 03', 3),
+(4, 'Rua das Flores', '100', 'Centro', 12345678, 'Apto 101', 1),
+(5, 'Avenida Paulista', '2000', 'Bela Vista', 98765432, 'Bloco B', 1),
+(6, 'Rua dos Alfeneiros', '4', 'Privet Drive', 54321678, 'Casa', 2),
+(7, 'Rua das Acácias', '555', 'Jardim Primavera', 13579246, 'Casa 01', 3),
+(8, 'Avenida Atlântica', '1000', 'Copacabana', 24681357, 'Apartamento 301', 2),
+(9, 'Rua do Sol', '789', 'Praia Grande', 98765432, 'Casa 1…
+[20:35, 11/06/2024] +55 69 9338-5400: -- Inserir dados em medicamento
+INSERT INTO medicamento (nome, dosagem) VALUES 
+('Atenolol', '50mg'), 
+('Metformina', '500mg'), 
+('Azitromicina', '500mg'),
+('Ibuprofeno', '400mg'), 
+('Paracetamol', '500mg'), 
+('Amoxicilina', '875mg'),
+('Captopril', '25mg'),
+('Omeprazol', '20mg'),
+('Loratadina', '10mg'),
+('Simvastatina', '40mg'),
+('Losartana', '50mg'),
+('Aspirina', '100mg'),
+('Clonazepam', '2mg'),
+('Diclofenaco', '50mg'),
+('Furosemida', '40mg'),
+('Cetirizina', '10mg'),
+('Metoprolol', '50mg'),
+('Prednisona', '20mg'),
+('Alprazolam', '0.5mg'),
+('Levotiroxina', '100mcg'),
+('Hidroclorotiazida', '25mg'),
+('Fluoxetina', '20mg'),
+('Ranitidina', '150mg')
+;
+
+-- Inserir dados em paciente_medicacao
+INSERT INTO paciente_medicacao (id_paciente, id_medicamento, frequencia, data_inicio, data_fim, horario_administracao, id_responsavel_administracao, observacoes, data_registro) VALUES 
+(1, 1, 'Diário', '2024-06-01', '2024-06-07', '08:00:00', 4, 'Tomar em jejum', '2024-06-01 09:00:00'), 
+(2, 2, 'Diário', '2024-06-02', '2024-06-08', '09:00:00', 4, 'Tomar após o café', '2024-06-02 10:00:00'), 
+(3, 3, 'Diário', '2024-06-03', '2024-06-09', '10:00:00', 4, 'Tomar com água', '2024-06-03 11:00:00'),
+(4, 4, 'Diário', '2024-06-04', '2024-06-10', '07:00:00', 5, 'Tomar com suco', '2024-06-04 08:00:00'), 
+(5, 5, 'Diário', '2024-06-05', '2024-06-11', '08:00:00', 4, 'Tomar antes do almoço', '2024-06-05 09:00:00'), 
+(6, 6, 'Diário', '2024-06-06', '2024-06-12', '09:00:00', 5, 'Tomar com leite', '2024-06-06 10:00:00'),
+(7, 7, 'Semanal', '2024-06-07', '2024-06-14', '10:00:00', 5, 'Tomar após o almoço', '2024-06-07 11:00:00'),
+(8, 8, 'Semanal', '2024-06-08', '2024-06-15', '11:00:00', 5, 'Tomar com água', '2024-06-08 12:00:00'),
+(9, 9, 'Mensal', '2024-06-09', '2024-07-09', '12:00:00', 5, 'Tomar antes de dormir', '2024-06-09 13:00:00'),
+(10, 10, 'Mensal', '2024-06-10', '2024-07-10', '13:00:00', 5, 'Tomar em jejum', '2024-06-10 14:00:00'),
+(11, 11, 'Diário', '2024-06-11', '2024-06-17', '14:00:00', 4, 'Tomar com suco', '2024-06-11 15:00:00'),
+(12, 12, 'Diário', '2024-06-12', '2024-06-18', '15:00:00', 5, 'Tomar após o café', '2024-06-12 16:00:00'),
+(13, 13, 'Diário', '2024-06-13', '2024-06-19', '16:00:00', 5, 'Tomar com leite', '2024-06-13 17:00:00')
+;
