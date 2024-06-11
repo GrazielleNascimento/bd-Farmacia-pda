@@ -156,3 +156,39 @@ CREATE TABLE paciente_medicacao (
   FOREIGN KEY (id_medicamento) REFERENCES medicamento(id),
   FOREIGN KEY (id_responsavel_administracao) REFERENCES profissional(id)
 );
+
+-- Inserir dados em pessoa_endereco
+INSERT INTO pessoa_endereco (id_pessoa, logradouro, numero, bairro, cep, complemento, id_cidade) VALUES 
+(1, 'Rua do Limoeiro', '123', 'Centro', 12345678, 'Apto 101', 1), 
+(2, 'Rua do Abacaxi', '456', 'Jardim Floresta', 87654321, 'Casa 02', 2), 
+(3, 'Rua da Feira', '789', 'Presidencial', 13579246, 'Sala 03', 3),
+(4, 'Rua das Flores', '100', 'Centro', 12345678, 'Apto 101', 1),
+(5, 'Avenida Paulista', '2000', 'Bela Vista', 98765432, 'Bloco B', 1),
+(6, 'Rua dos Alfeneiros', '4', 'Privet Drive', 54321678, 'Casa', 2),
+(7, 'Rua das Acácias', '555', 'Jardim Primavera', 13579246, 'Casa 01', 3),
+(8, 'Avenida Atlântica', '1000', 'Copacabana', 24681357, 'Apartamento 301', 2),
+(9, 'Rua do Sol', '789', 'Praia Grande', 98765432, 'Casa 10', 1),
+(10, 'Rua dos Girassóis', '888', 'Vila Nova', 36925814, 'Casa 05', 3),
+(11, 'Avenida da Liberdade', '200', 'Centro', 58291734, 'Apartamento 502', 2),
+(12, 'Rua das Palmeiras', '1234', 'Jardim Botânico', 74921683, 'Casa 20', 1),
+(13, 'Rua das Árvores', '100', 'Cidade Verde', 12345678, 'Casa 101', 1),
+(14, 'Avenida das Américas', '2000', 'América', 98765432, 'Bloco B', 1),
+(15, 'Rua dos Coqueiros', '4', 'Coqueiral', 54321678, 'Casa', 2),
+(16, 'Rua dos Jasmins', '555', 'Jardim das Flores', 13579246, 'Casa 01', 3),
+(17, 'Avenida Paulista', '1000', 'Bela Vista', 24681357, 'Apartamento 301', 2),
+(18, 'Rua da Praia', '789', 'Beira Mar', 98765432, 'Casa 10', 1),
+(19, 'Rua das Orquídeas', '888', 'Orquidário', 36925814, 'Casa 05', 3),
+(20, 'Avenida São Paulo', '200', 'Centro', 58291734, 'Apartamento 502', 2),
+(21, 'Rua das Margaridas', '1234', 'Jardim das Flores', 74921683, 'Casa 20', 1),
+(22, 'Rua das Violetas', '555', 'Vila das Flores', 13579246, 'Casa 01', 3),
+(23, 'Avenida do Sol', '1000', 'Sol Nascente', 24681357, 'Apartamento 301', 2),
+(24, 'Rua do Mar', '789', 'Praia Azul', 98765432, 'Casa 10', 1),
+(25, 'Rua dos Lírios', '888', 'Lirium', 36925814, 'Casa 05', 3),
+(26, 'Avenida dos Ipês', '200', 'Jardim das Flores', 58291734, 'Apartamento 502', 2),
+(27, 'Rua das Rosas', '1234', 'Jardim das Rosas', 74921683, 'Casa 20', 1),
+(28, 'Rua das Acácias', '555', 'Vila Acácia', 13579246, 'Casa 01', 3),
+(29, 'Avenida dos Girassóis', '1000', 'Girasolândia', 24681357, 'Apartamento 301', 2),
+(30, 'Rua das Flores', '500', 'Vila Bela', 12345678, 'Casa 05', 1), 
+(31, 'Avenida Brasil', '1500', 'Centro', 87654321, 'Apartamento 301', 2), 
+(32, 'Rua dos Passarinhos', '789', 'Jardim das Aves', 13579246, 'Sala 03', 3)
+;
