@@ -291,7 +291,26 @@ INSERT INTO `profissional_especialidade` (`nome`) VALUES
 ('Nutrologia'),
 ('Homeopatia'),
 ('Oncopediatria'),
-('Dermatopatologia')
+('Dermatopatologia');
+
+-- Atualizar a tabela profissional_especialidade
+UPDATE profissional_especialidade SET id_profissional = 1, id_rqe_doc = 3 WHERE id = 1;
+
+-- Inserir dados em paciente
+INSERT INTO paciente (id_pessoa, id_profissional_responsável, diagnóstico, medicamentos_usados, horario_entrada, horario_saida) VALUES 
+(3, 1, 'Hipertensão', 'Atenolol', '2024-06-01 10:00:00', '2024-06-02 10:00:00'), 
+(4, 1, 'Diabetes', 'Metformina', '2024-06-02 11:00:00', '2024-06-03 11:00:00'), 
+(5, 1, 'Pneumonia', 'Azitromicina', '2024-06-03 12:00:00', '2024-06-04 12:00:00'),
+(6, 2, 'Asma', 'Salbutamol', '2024-06-01 10:00:00', '2024-06-02 10:00:00'), 
+(8, 1, 'Gripe', 'Paracetamol', '2024-06-02 11:00:00', '2024-06-03 11:00:00'), 
+(9, 3, 'Fratura no braço', 'Dipirona', '2024-06-03 12:00:00', '2024-06-04 12:00:00'),
+(12, 1, 'Depressão', 'Sertralina', '2024-06-04 13:00:00', '2024-06-05 13:00:00'),
+(13, 2, 'Infecção de ouvido', 'Amoxicilina', '2024-06-05 14:00:00', '2024-06-06 14:00:00'),
+(14, 2, 'Dor de cabeça', 'Ibuprofeno', '2024-06-06 15:00:00', '2024-06-07 15:00:00'),
+(15, 1, 'Pressão alta', 'Losartana', '2024-06-07 16:00:00', '2024-06-08 16:00:00'),
+(16, 1, 'Diabetes', 'Insulina', '2024-06-08 17:00:00', '2024-06-09 17:00:00'),
+(17, 1, 'Torção no tornozelo', 'Diclofenaco', '2024-06-09 18:00:00', '2024-06-10 18:00:00'),
+(18, 2, 'Dor de garganta', 'Pastilha para garganta', '2024-06-10 19:00:00', '2024-06-11 19:00:00')
 ;
 
 INSERT INTO paciente_leito (id_paciente, numero_do_quarto, andar, disponibilidade) VALUES 
@@ -307,5 +326,5 @@ INSERT INTO paciente_leito (id_paciente, numero_do_quarto, andar, disponibilidad
 (10, 110, 5, FALSE),
 (11, 111, 6, FALSE), 
 (12, 112, 6, FALSE), 
-(13, 113, 7, FALSE)
+(13, 113, 7, FALSE)
 ;
