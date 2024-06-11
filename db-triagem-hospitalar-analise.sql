@@ -36,3 +36,15 @@ SELECT pessoa.nome, pessoa.sobrenome, profissional_especialidade.nome AS especia
 FROM profissional 
 INNER JOIN pessoa ON profissional.id_pessoa = pessoa.id 
 INNER JOIN profissional_especialidade ON profissional.id_profissional_especialidade = profissional_especialidade.id;
+
+-- Consultando pacientes e suas doenças
+SELECT pessoa.nome, pessoa.sobrenome, paciente.diagnóstico 
+FROM paciente 
+INNER JOIN pessoa ON paciente.id_pessoa = pessoa.id;
+
+
+
+-- Consultando todos os leitos ocupados por pacientes
+SELECT paciente_leito.numero_do_quarto, paciente_leito.andar, paciente_leito.disponibilidade 
+FROM paciente_leito 
+WHERE paciente_leito.disponibilidade = FALSE;
