@@ -1,7 +1,7 @@
 USE triagem_hospitalar;
 
--- Inserir dados em estado
-INSERT INTO `estado` (`nome`, `sigla`) VALUES 
+
+INSERT INTO estado (nome, sigla) VALUES 
 ('Acre', 'AC'), 
 ('Alagoas', 'AL'),
 ('Amapá', 'AP'),
@@ -31,7 +31,8 @@ INSERT INTO `estado` (`nome`, `sigla`) VALUES
 ('Tocantins', 'TO')
 ;
 
--- Inserir dados em cidade
+
+
 INSERT INTO cidade (nome, id_estado) VALUES 
 ('São Paulo', 25), 
 ('Rio de Janeiro', 19), 
@@ -65,7 +66,8 @@ INSERT INTO cidade (nome, id_estado) VALUES
 ('Gurupi', 27)
 ;
 
--- Inserir dados em pessoa
+
+
 INSERT INTO pessoa (nome, sobrenome, data_de_nascimento, genero, tel_contato, email) VALUES 
 ('João', 'Silva', '1990-05-15', 'M', '11223344', 'joao.silva@example.com'), 
 ('Maria', 'Santos', '1985-09-20', 'F', '99887766', 'maria.santos@example.com'), 
@@ -104,7 +106,8 @@ INSERT INTO pessoa (nome, sobrenome, data_de_nascimento, genero, tel_contato, em
 ('Mariana', 'Silva', '1975-11-30', 'F', '11654321098', 'mariana.silva@example.com')
 ;
 
--- Inserir dados em documento
+
+
 INSERT INTO documento (nome, sigla, numero, id_uf, data_emissao) VALUES 
 ('Certificado de Registro Médico', 'CRM', 123456, 1, '2020-01-01'), 
 ('Certificado de Registro de Enfermagem', 'COREN', 654321, 2, '2019-05-10'), 
@@ -143,7 +146,8 @@ INSERT INTO documento (nome, sigla, numero, id_uf, data_emissao) VALUES
 ('Certificado de Registro Médico', 'CRM', 1237894, 1, '2018-12-20')
 ;
 
- -- Inserir dados em pessoa_endereco
+
+
 INSERT INTO pessoa_endereco (id_pessoa, logradouro, numero, bairro, cep, complemento, id_cidade) VALUES 
 (1, 'Rua do Limoeiro', '123', 'Centro', 12345678, 'Apto 101', 1), 
 (2, 'Rua do Abacaxi', '456', 'Jardim Floresta', 87654321, 'Casa 02', 2), 
@@ -179,7 +183,8 @@ INSERT INTO pessoa_endereco (id_pessoa, logradouro, numero, bairro, cep, complem
 (32, 'Rua dos Passarinhos', '789', 'Jardim das Aves', 13579246, 'Sala 03', 3)
 ;
 
--- Inserir dados em pessoa_documentos
+
+
 INSERT INTO pessoa_documentos (id_pessoa, id_doc) VALUES 
 (1, 1), 
 (2, 2), 
@@ -220,7 +225,6 @@ INSERT INTO pessoa_documentos (id_pessoa, id_doc) VALUES
 
 
 
--- Inserir dados em pessoa_contato_emergencial
 INSERT INTO pessoa_contato_emergencial (id_pessoa, id_pessoa_contato) VALUES 
 (1, 1),
 (2, 2),
@@ -257,6 +261,8 @@ INSERT INTO pessoa_contato_emergencial (id_pessoa, id_pessoa_contato) VALUES
 (33, 33)
 ;
 
+
+
 INSERT INTO profissional (id_pessoa, categoria, id_profissional_especialidade, id_crm_doc, id_coren_doc) VALUES 
 (1, 'Médico', 1, 7, NULL), 
 (2, 'Enfermeiro', 2, NULL, 8), 
@@ -269,10 +275,12 @@ INSERT INTO profissional (id_pessoa, categoria, id_profissional_especialidade, i
 (9, 'Farmacêutico', 8, NULL, 17),
 (10, 'Biomédico', 7, NULL, NULL),
 (11, 'Radiologista', 5, NULL, NULL),
-(12, 'Fonoaudiólogo', 4, NULL, NULL)
+(12, 'Fonoaudiólogo', 4, NULL, NULL)
 ;
 
-INSERT INTO `profissional_especialidade` (`nome`) VALUES 
+
+
+INSERT INTO profissional_especialidade (nome) VALUES 
 ('Cardiologia'), 
 ('Enfermeiro'), 
 ('Cirurgia'),
@@ -291,12 +299,15 @@ INSERT INTO `profissional_especialidade` (`nome`) VALUES
 ('Nutrologia'),
 ('Homeopatia'),
 ('Oncopediatria'),
-('Dermatopatologia');
+('Dermatopatologia')
+;
 
--- Atualizar a tabela profissional_especialidade
+
+
 UPDATE profissional_especialidade SET id_profissional = 1, id_rqe_doc = 3 WHERE id = 1;
 
--- Inserir dados em paciente
+
+
 INSERT INTO paciente (id_pessoa, id_profissional_responsável, diagnóstico, medicamentos_usados, horario_entrada, horario_saida) VALUES 
 (3, 1, 'Hipertensão', 'Atenolol', '2024-06-01 10:00:00', '2024-06-02 10:00:00'), 
 (4, 1, 'Diabetes', 'Metformina', '2024-06-02 11:00:00', '2024-06-03 11:00:00'), 
@@ -313,6 +324,26 @@ INSERT INTO paciente (id_pessoa, id_profissional_responsável, diagnóstico, med
 (18, 2, 'Dor de garganta', 'Pastilha para garganta', '2024-06-10 19:00:00', '2024-06-11 19:00:00')
 ;
 
+
+
+INSERT INTO paciente_dados_vitais (id_paciente, id_responsavel_coleta, data_e_horario, temperatura, frequencia_cardiaca, frequencia_respiratoria, pressao_arterial, glicemia) VALUES 
+(1, 4, '2024-06-01 11:00:00', 36.5, 80, 20, '120/80', 90), 
+(2, 5, '2024-06-02 12:00:00', 37.0, 85, 22, '130/85', 95), 
+(3, 4, '2024-06-03 13:00:00', 38.0, 90, 24, '140/90', 100),
+(4, 5, '2024-06-04 14:00:00', 36.8, 75, 18, '125/80', 88),
+(5, 4, '2024-06-05 15:00:00', 37.2, 88, 21, '135/90', 92),
+(6, 5, '2024-06-06 16:00:00', 36.9, 82, 19, '130/85', 89),
+(7, 4, '2024-06-07 17:00:00', 37.1, 78, 20, '128/82', 90),
+(8, 5, '2024-06-08 18:00:00', 37.3, 84, 22, '132/86', 94),
+(9, 4, '2024-06-09 19:00:00', 36.7, 81, 21, '120/80', 91),
+(10, 5, '2024-06-10 20:00:00', 37.4, 89, 23, '140/88', 96),
+(11, 4, '2024-06-11 09:00:00', 37.0, 83, 19, '125/85', 89), 
+(12, 5, '2024-06-12 10:00:00', 36.6, 76, 18, '115/75', 87), 
+(13, 4, '2024-06-13 11:00:00', 37.2, 88, 21, '135/90', 92)
+;
+
+
+
 INSERT INTO paciente_leito (id_paciente, numero_do_quarto, andar, disponibilidade) VALUES 
 (1, 101, 1, FALSE), 
 (2, 102, 1, FALSE), 
@@ -326,10 +357,11 @@ INSERT INTO paciente_leito (id_paciente, numero_do_quarto, andar, disponibilidad
 (10, 110, 5, FALSE),
 (11, 111, 6, FALSE), 
 (12, 112, 6, FALSE), 
-(13, 113, 7, FALSE)
+(13, 113, 7, FALSE)
 ;
 
--- Inserir dados em acompanhante
+
+
 INSERT INTO acompanhante (id_pessoa, id_paciente, parentesco) VALUES 
 (7, 1, 'Esposo'), 
 (8, 2, 'Marido'), 
@@ -343,22 +375,11 @@ INSERT INTO acompanhante (id_pessoa, id_paciente, parentesco) VALUES
 (16, 10, 'Avô'),
 (17, 11, 'Avó'),
 (18, 12, 'Sobrinho'),
-(19, 13, 'Sobrinha')
+(19, 13, 'Sobrinha')
 ;
 
 
-[19:46, 11/06/2024] +55 69 9338-5400: -- Inserir dados em pessoa_endereco
-INSERT INTO pessoa_endereco (id_pessoa, logradouro, numero, bairro, cep, complemento, id_cidade) VALUES 
-(1, 'Rua do Limoeiro', '123', 'Centro', 12345678, 'Apto 101', 1), 
-(2, 'Rua do Abacaxi', '456', 'Jardim Floresta', 87654321, 'Casa 02', 2), 
-(3, 'Rua da Feira', '789', 'Presidencial', 13579246, 'Sala 03', 3),
-(4, 'Rua das Flores', '100', 'Centro', 12345678, 'Apto 101', 1),
-(5, 'Avenida Paulista', '2000', 'Bela Vista', 98765432, 'Bloco B', 1),
-(6, 'Rua dos Alfeneiros', '4', 'Privet Drive', 54321678, 'Casa', 2),
-(7, 'Rua das Acácias', '555', 'Jardim Primavera', 13579246, 'Casa 01', 3),
-(8, 'Avenida Atlântica', '1000', 'Copacabana', 24681357, 'Apartamento 301', 2),
-(9, 'Rua do Sol', '789', 'Praia Grande', 98765432, 'Casa 1…
-[20:35, 11/06/2024] +55 69 9338-5400: -- Inserir dados em medicamento
+
 INSERT INTO medicamento (nome, dosagem) VALUES 
 ('Atenolol', '50mg'), 
 ('Metformina', '500mg'), 
@@ -385,7 +406,8 @@ INSERT INTO medicamento (nome, dosagem) VALUES
 ('Ranitidina', '150mg')
 ;
 
--- Inserir dados em paciente_medicacao
+
+
 INSERT INTO paciente_medicacao (id_paciente, id_medicamento, frequencia, data_inicio, data_fim, horario_administracao, id_responsavel_administracao, observacoes, data_registro) VALUES 
 (1, 1, 'Diário', '2024-06-01', '2024-06-07', '08:00:00', 4, 'Tomar em jejum', '2024-06-01 09:00:00'), 
 (2, 2, 'Diário', '2024-06-02', '2024-06-08', '09:00:00', 4, 'Tomar após o café', '2024-06-02 10:00:00'), 
