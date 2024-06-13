@@ -6,13 +6,13 @@ Através da observabilidade de um problema cotidiano em hospitais, desenvolvemos
 
 ### Diagrama Conceitual
 
-![alt text](image-1.png)
+![alt text](readme/image-1.png)
 
 #
 
 ### Diagrama Entity-Relationship
 
-![alt text](image.png)
+![alt text](readme/image.png)
 
 
 #
