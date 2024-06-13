@@ -23,6 +23,8 @@ Link Gráficos (Google Sheets): https://docs.google.com/spreadsheets/d/1phkhjtBn
 
 Link Diagrama Entidade Relacionamento (DB Diagram): https://dbdiagram.io/d/Projeto-final-m3-665204fff84ecd1d2220e692
 
+Link Slides: https://www.canva.com/design/DAGH3wLRtqk/KVtfPuZC1-eQXxX8hU3TnA/edit?utm_content=DAGH3wLRtqk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 #
 🖇️ Projeto desenvolvido como projeto final do módulo 3 para a PdA (Programadores do Amanhã)  
