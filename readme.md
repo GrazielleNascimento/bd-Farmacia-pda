@@ -14,12 +14,14 @@ Através da observabilidade de um problema cotidiano em hospitais, desenvolvemos
 
 ![alt text](readme/image.png)
 
+#
+
 ### Links
 
-Link Gráficos Google Sheets: https://docs.google.com/spreadsheets/d/1phkhjtBnob6OkoQug4FdycQ3VlVDCnd4nOSqafbL580/edit?usp=sharing
+Link Gráficos (Google Sheets): https://docs.google.com/spreadsheets/d/1phkhjtBnob6OkoQug4FdycQ3VlVDCnd4nOSqafbL580/edit?usp=sharing
 
 
-Link DB Diagram (Diagrama Entidade Relacionamento): https://dbdiagram.io/d/Projeto-final-m3-665204fff84ecd1d2220e692
+Link Diagrama Entidade Relacionamento (DB Diagram): https://dbdiagram.io/d/Projeto-final-m3-665204fff84ecd1d2220e692
 
 
 #
