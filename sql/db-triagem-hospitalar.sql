@@ -12,7 +12,7 @@ CREATE TABLE cidade (
   id int PRIMARY KEY AUTO_INCREMENT,
   nome varchar(100),
   id_estado int,
-  FOREIGN KEY (id_estado) REFERENCES `estado`(`id`)
+  FOREIGN KEY (id_estado) REFERENCES estado(id)
 );
 
 CREATE TABLE pessoa (
