@@ -2,37 +2,37 @@ CREATE DATABASE triagem_hospitalar;
 USE triagem_hospitalar;
 
 -- Tabelas primárias sem dependências
-CREATE TABLE `estado` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `nome` varchar(100),
-  `sigla` varchar(5)
+CREATE TABLE estado (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(100),
+  sigla varchar(5)
 );
 
-CREATE TABLE `cidade` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `nome` varchar(100),
-  `id_estado` int,
-  FOREIGN KEY (`id_estado`) REFERENCES `estado`(`id`)
+CREATE TABLE cidade (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(100),
+  id_estado int,
+  FOREIGN KEY (id_estado) REFERENCES `estado`(`id`)
 );
 
-CREATE TABLE `pessoa` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `nome` varchar(100),
-  `sobrenome` varchar(100),
-  `data_de_nascimento` date,
-  `genero` char(1),
-  `tel_contato` varchar(50),
-  `email` varchar(50)
+CREATE TABLE pessoa (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(100),
+  sobrenome varchar(100),
+  data_de_nascimento date,
+  genero char(1),
+  tel_contato varchar(50),
+  email varchar(50)
 );
 
-CREATE TABLE `documento` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `nome` varchar(50),
-  `sigla` varchar(10),
-  `numero` int(50),
-  `id_uf` int,
-  `data_emissao` date,
-  FOREIGN KEY (`id_uf`) REFERENCES `estado`(`id`)
+CREATE TABLE documento (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(50),
+  sigla varchar(10),
+  numero int(50),
+  id_uf int,
+  data_emissao date,
+  FOREIGN KEY (id_uf) REFERENCES estado(id)
 );
 
 -- Tabelas com dependências de pessoa
@@ -84,23 +84,23 @@ CREATE TABLE profissional (
   FOREIGN KEY (id_coren_doc) REFERENCES documento(id)
 );
 
-ALTER TABLE `profissional_especialidade`
-  ADD COLUMN `id_profissional` int,
-  ADD COLUMN `id_rqe_doc` int,
-  ADD FOREIGN KEY (`id_profissional`) REFERENCES `profissional`(`id`),
-  ADD FOREIGN KEY (`id_rqe_doc`) REFERENCES `documento`(`id`);
+ALTER TABLE profissional_especialidade
+  ADD COLUMN id_profissional int,
+  ADD COLUMN id_rqe_doc int,
+  ADD FOREIGN KEY (id_profissional) REFERENCES profissional(id),
+  ADD FOREIGN KEY (id_rqe_doc) REFERENCES documento(id);
 
 -- Tabelas de paciente e relacionados
-CREATE TABLE `paciente` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `id_pessoa` int,
-  `id_profissional_responsável` int NOT NULL,
-  `diagnóstico` text(500),
-  `medicamentos_usados` varchar(200),
-  `horario_entrada` datetime,
-  `horario_saida` datetime,
-  FOREIGN KEY (`id_pessoa`) REFERENCES `pessoa`(`id`),
-  FOREIGN KEY (`id_profissional_responsável`) REFERENCES `profissional`(`id`)
+CREATE TABLE paciente (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  id_pessoa int,
+  id_profissional_responsável int NOT NULL,
+  diagnóstico text(500),
+  medicamentos_usados varchar(200),
+  horario_entrada datetime,
+  horario_saida datetime,
+  FOREIGN KEY (id_pessoa) REFERENCES pessoa(id),
+  FOREIGN KEY (id_profissional_responsável) REFERENCES profissional(id)
 );
 
 CREATE TABLE paciente_leito (

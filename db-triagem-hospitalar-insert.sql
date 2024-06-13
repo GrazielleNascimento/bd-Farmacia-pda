@@ -263,23 +263,6 @@ INSERT INTO pessoa_contato_emergencial (id_pessoa, id_pessoa_contato) VALUES
 
 
 
-INSERT INTO profissional (id_pessoa, categoria, id_profissional_especialidade, id_crm_doc, id_coren_doc) VALUES 
-(1, 'Médico', 1, 7, NULL), 
-(2, 'Enfermeiro', 2, NULL, 8), 
-(3, 'Cirurgião', 3, 9, NULL),
-(4, 'Tec de Enfermagem', 2, NULL, 13), 
-(5, 'Auxiliar de Enfermagem', 2, NULL, 14), 
-(6, 'Fisioterapeuta', 4, NULL, 15),
-(7, 'Psicólogo', 9, NULL, NULL),
-(8, 'Nutricionista', 6, NULL, 16),
-(9, 'Farmacêutico', 8, NULL, 17),
-(10, 'Biomédico', 7, NULL, NULL),
-(11, 'Radiologista', 5, NULL, NULL),
-(12, 'Fonoaudiólogo', 4, NULL, NULL)
-;
-
-
-
 INSERT INTO profissional_especialidade (nome) VALUES 
 ('Cardiologia'), 
 ('Enfermeiro'), 
@@ -303,9 +286,25 @@ INSERT INTO profissional_especialidade (nome) VALUES
 ;
 
 
+INSERT INTO profissional (id_pessoa, categoria, id_profissional_especialidade, id_crm_doc, id_coren_doc) VALUES 
+(1, 'Médico', 1, 7, NULL), 
+(2, 'Enfermeiro', 2, NULL, 8), 
+(3, 'Cirurgião', 3, 9, NULL),
+(4, 'Tec de Enfermagem', 2, NULL, 13), 
+(5, 'Auxiliar de Enfermagem', 2, NULL, 14), 
+(6, 'Fisioterapeuta', 4, NULL, 15),
+(7, 'Psicólogo', 9, NULL, NULL),
+(8, 'Nutricionista', 6, NULL, 16),
+(9, 'Farmacêutico', 8, NULL, 17),
+(10, 'Biomédico', 7, NULL, NULL),
+(11, 'Radiologista', 5, NULL, NULL),
+(12, 'Fonoaudiólogo', 4, NULL, NULL)
+;
 
-UPDATE profissional_especialidade SET id_profissional = 1, id_rqe_doc = 3 WHERE id = 1;
 
+ALTER TABLE profissional_especialidade
+  ADD FOREIGN KEY (id_profissional) REFERENCES profissional(id),
+  ADD FOREIGN KEY (id_rqe_doc) REFERENCES documento(id);
 
 
 INSERT INTO paciente (id_pessoa, id_profissional_responsável, diagnóstico, medicamentos_usados, horario_entrada, horario_saida) VALUES 
